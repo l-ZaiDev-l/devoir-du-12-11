@@ -1,0 +1,9 @@
+<mat-card *ngIf="product">
+  <mat-card-title>{{ product.name }}</mat-card-title>
+  <mat-card-content>
+    <p>Price: {{ product.price | currency }}</p>
+    <p *ngIf="product.ratings?.length">
+      Avg Rating: {{ averageRating | number:'1.1-2' }}
+    </p>
+  </mat-card-content>
+</mat-card>

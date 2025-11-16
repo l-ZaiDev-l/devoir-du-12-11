@@ -1,0 +1,10 @@
+<mat-card>
+  <h2>Login</h2>
+  <app-login-form (loginSubmit)="onLogin($event)"></app-login-form>
+
+  <mat-progress-bar *ngIf="loading$ | async" mode="indeterminate"></mat-progress-bar>
+
+  <div *ngIf="error$ | async as error" class="error">
+    {{ error?.message || error }}
+  </div>
+</mat-card>
