@@ -1,25 +1,24 @@
 
 body {
+
   place-items: center;
+  min-height: 100vh;
   background-image: url(../../../assets/img/login-bg.png);
   background-size: cover;
   background-position: center center;
   margin: 0;
-height: auto;
-  min-height: unset;
 }
-
 
 
 
 .wrapper .box-area {
   display: flex;
-  flex-wrap: wrap;   /* autorise le retour à la ligne */
-  justify-content: center;
-  align-items: flex-start;
+  flex-wrap: nowrap; /* empêche le retour à la ligne */
+  justify-content: center; /* centre horizontalement */
+  align-items: flex-start; /* aligne le haut des boxes */
   text-align: center;
   color: #fff;
-  gap: 40px;
+  gap: 40px; /* espace entre les boxes */
   margin: 200px;
 }
 

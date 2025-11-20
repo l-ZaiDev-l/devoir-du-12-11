@@ -7,6 +7,7 @@ import { DevProductRatingComponent } from './dev/dev-product-rating.component';
 import { AppPlaceholderComponent } from './app-placeholder.component';
 
 import { LoginPageComponent } from './pages/login-page/login-page';
+import { Home } from './pages/home/home';
 import { ProductsPageComponent } from './pages/products-page/products-page';
 import { ProductRatingPageComponent } from './pages/product-rating-page/product-rating-page';
 
@@ -26,6 +27,7 @@ export const routes: Routes = [
       { path: 'products', component: ProductsPageComponent },
       { path: 'product-rating', component: ProductRatingPageComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'home', component: Home },
     ]
   },
 

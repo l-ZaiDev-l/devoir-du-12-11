@@ -6,6 +6,8 @@ import { paginate, avgRating } from './utils';
 const API = '/api';
 
 export const handlers = [
+
+  
   // Auth: POST /api/auth/token/ -> { access, refresh }
   http.post(`${API}/auth/token/`, async () => {
     // Ici on accepte tout payload pour valider l'intégration front.
@@ -17,6 +19,10 @@ export const handlers = [
       { status: 200 },
     );
   }),
+  
+  http.get('/app/login', async () => {
+  return HttpResponse.json({}, { status: 200 });
+}),
 
   // Auth refresh: POST /api/auth/token/refresh/ -> { access }
   http.post(`${API}/auth/token/refresh/`, async () => {
@@ -43,6 +49,8 @@ export const handlers = [
     return HttpResponse.json({ count, next: null, previous: null, results }, { status: 200 });
   }),
 
+  
+
   // Product rating: GET /api/products/:id/rating/
   http.get(`${API}/products/:id/rating/`, async ({ params }) => {
     const id = Number(params['id']);
@@ -54,3 +62,4 @@ export const handlers = [
     );
   }),
 ];
+

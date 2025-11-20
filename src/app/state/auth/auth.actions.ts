@@ -21,3 +21,5 @@ export const refreshSuccess = createAction(
   '[Auth] Refresh Success',
   props<{ access: string }>()
 );
+
+export const logout = createAction('[Auth] Logout');

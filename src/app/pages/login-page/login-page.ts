@@ -14,11 +14,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginFormComponent } from '../components/login-form/login-form'; 
 
+import { FormsModule } from '@angular/forms';
+
+
+
 @Component({
   standalone: true, 
   selector: 'app-login-page',
   templateUrl: './login-page.html',
+  styleUrls: ['./css/styles.css'],
   imports: [
+    FormsModule,
     CommonModule,
     MatCardModule,
     MatFormFieldModule,
@@ -26,10 +32,13 @@ import { LoginFormComponent } from '../components/login-form/login-form';
     MatButtonModule,
     MatProgressBarModule,
     ReactiveFormsModule,
-    LoginFormComponent
-  ]
+  ],
 })
 export class LoginPageComponent {
+
+  username: string = 'demo';  
+  password: string = 'demo';  
+
   loading$: Observable<boolean>;
   error$: Observable<any>;
 

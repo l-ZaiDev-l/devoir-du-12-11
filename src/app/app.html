@@ -1,30 +1,15 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <span>My Shop App</span>
 </mat-toolbar>
 
 <mat-sidenav-container style="height: calc(100vh - 64px);">
   <mat-sidenav mode="side" opened>
 
-    <mat-nav-list>
-      <a mat-list-item routerLink="/app/login">Login</a>
-      <a mat-list-item routerLink="/app/products">Products</a>
-      <a mat-list-item routerLink="/app/product-rating">Product Rating</a>
-    </mat-nav-list>
-
   </mat-sidenav>
 
   <mat-sidenav-content style="padding: 16px;">
-
-    <div class="dashboard">
-      <p *ngIf="isLoggedIn$ | async; else loggedOut">
-        Status: <strong>Logged In</strong>
-      </p>
-      <ng-template #loggedOut>
-        Status: <strong>Logged Out</strong>
-      </ng-template>
-    </div>
-
-
+     -->
     <router-outlet></router-outlet>
+<!--     
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->

@@ -1,17 +1,4 @@
-<!-- <mat-card>
-  <h2>Products</h2>
-
-  <mat-progress-bar *ngIf="loading$ | async" mode="indeterminate"></mat-progress-bar>
-
-  <div *ngIf="error$ | async as error" class="error">
-    {{ error?.message || error }}
-  </div>
-
-  <app-product-list [products]="(products$ | async) || []"></app-product-list>
-</mat-card>
- -->
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <!-- codingflicks.com -->
 <head>
@@ -40,24 +27,30 @@
 </nav> 
 
   <div class="wrapper">
-      <div class="box-area">
-          
-          <!-- Boucle sur les produits -->
-          <a *ngFor="let product of (products$ | async) || []"
-            [routerLink]="['/products', product.id]">
-              
-              <div class="box">
-                <h2 style="font-size: 30px;">{{ product.name }}</h2>
-                  <div class="img-box">
-                      <img [src]=" '../../../assets/img/products.png'" alt="">
-                  </div>
-                  
-              </div>
+    
+		<div class="box-area">
+            <a href="/app/products">
+                <div class="box">
+				    <div class="img-box"><img alt="" src="../../../assets/img/product.png"></div>
+				    <h2>Products</h2>
+			    </div>
+            </a>
 
-          </a>
+            <a href="box">
+                <div class="box">
+				    <div class="img-box"><img alt="" src="../../../assets/img/rating.png"></div>
+				    <h2>Rating Products</h2>
+			    </div>
+            </a>
 
-      </div>
-  </div>
-
-  </body>
+            <a href="box">
+                <div class="box">
+				    <div class="img-box"><img alt="" src="../../../assets/img/test.png"></div>
+				    <h2>Testing</h2>
+			    </div>
+            </a>
+			
+		</div>
+	</div>
+</body>
 </html>

@@ -13,7 +13,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { authReducer } from './state/auth/auth.reducer';
 import { productsReducer } from './state/products/products.reducer';
 
-import { loginEffect, refreshEffect } from './state/auth/auth.effects';
+import { loginEffect, refreshEffect, loginRedirectEffect } from './state/auth/auth.effects';
 import { loadProductsEffect } from './state/products/products.effects';
 
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -27,7 +27,8 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptorsFromDi()),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideStore({ auth: authReducer, products: productsReducer }),
-    provideEffects({ loginEffect, refreshEffect, loadProductsEffect }),
+    provideEffects({ loginEffect, loginRedirectEffect, refreshEffect, loadProductsEffect }),
     authInterceptorProvider, // ✅ utiliser un objet pour FunctionalEffects
+    
   ],
 };
