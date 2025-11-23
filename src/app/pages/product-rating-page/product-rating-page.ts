@@ -14,6 +14,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 @Component({
   selector: 'app-product-rating-page',
   templateUrl: './product-rating-page.html',
+    styleUrl: './product-rating-page.css',
   imports: [CommonModule,
   MatCardModule,
   MatFormFieldModule,

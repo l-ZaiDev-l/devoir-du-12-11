@@ -1,0 +1,122 @@
+
+
+<script>
+    $('.like-btn').on('click', function() {
+   $(this).toggleClass('is-active');
+});
+$('.minus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value > 1) {
+        value = value - 1;
+    } else {
+        value = 0;
+    }
+ 
+    $input.val(value);
+});
+ 
+$('.plus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value < 100) {
+        value = value + 1;
+    } else {
+        value = 100;
+    }
+ 
+    $input.val(value);
+});
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- codingflicks.com -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Responsive Cards in HTML CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+</head>
+
+
+
+<body>
+    
+    <nav id="navbar">
+    <div class="nav-center">
+        <ul class="nav-list">
+        <li class="nav-link-active"><a class="nav-link" href="/app/home"><i class="uil uil-home-alt"></i> Home</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/products"><i class="uil uil-chat"></i>Products</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/product-rating"><i class="uil uil-shopping-bag"></i> Products Rating</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/cart"><i class="uil uil-chat"></i>Cart</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/login"><i class="uil uil-user"></i>Disconnect</a></li>
+        </ul>
+    </div>
+</nav> 
+
+  <div class="wrapper">
+    
+		<div class="box-area">
+           
+
+
+
+            <div class="shopping-cart">
+  <!-- Title -->
+  <div class="title">
+    <h2>Shopping Cart</h2>
+    
+  </div>
+ 
+  <!-- Product #1 -->
+  <div class="item">
+ 
+    <div class="image">
+      <img src="../../../assets/img/product2.png" alt="" />
+    </div>
+ 
+    <div class="description">
+      <span>Common Projects</span>
+      <span>Bball High</span>
+      <span>White</span>
+    </div>
+ 
+<div class="quantity">
+  <input type="number"
+         min="1"
+
+         class="qty-input" />
+
+  <button class="update-btn" >
+    Update
+  </button>
+  
+</div>
+ 
+    <div class="total-price">$549</div>
+      <button class="delete-btn">
+    Delete
+  </button>
+  </div>
+ 
+
+
+</div>
+
+
+			
+		</div>
+	</div>
+</body>
+</html>

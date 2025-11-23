@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
   <h2>Check Product Rating</h2>
 
   <form [formGroup]="ratingForm" (ngSubmit)="fetchRating()">
@@ -20,4 +20,103 @@
     <p>Average Rating: {{ ratingResult.avg_rating }}</p>
     <p>Number of Ratings: {{ ratingResult.count }}</p>
   </div>
-</mat-card>
+</mat-card> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- codingflicks.com -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Responsive Cards in HTML CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+</head>
+
+
+<body>
+    
+    <nav id="navbar">
+    <div class="nav-center">
+        <ul class="nav-list">
+        <li class="nav-link-active"><a class="nav-link" href="/app/home"><i class="uil uil-home-alt"></i> Home</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/products"><i class="uil uil-chat"></i>Products</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/product-rating"><i class="uil uil-shopping-bag"></i> Products Rating</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/cart"><i class="uil uil-chat"></i>Cart</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/login"><i class="uil uil-user"></i>Disconnect</a></li>
+        </ul>
+    </div>
+</nav> 
+
+  <div class="wrapper">
+    
+    <div class="box-area">
+
+        <h2>Check Product Rating</h2>
+
+      <form [formGroup]="ratingForm" (ngSubmit)="fetchRating()">
+        <mat-form-field>
+          <mat-label>Product ID</mat-label>
+          <input matInput type="number" formControlName="productId" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="ratingForm.invalid || loading">
+          Get Rating
+        </button>
+      </form>
+
+      <style>
+       mat-form-field {
+  width: 100%;
+}
+
+/* Conteneur du champ */
+.mat-mdc-text-field-wrapper {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 0.25s ease-in-out;
+}
+
+/* Sur hover */
+.mat-mdc-text-field-wrapper:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Lorsque le champ est focus */
+.mat-mdc-text-field-wrapper.mdc-text-field--focused {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: #6cb8ff;
+  box-shadow: 0 0 8px rgba(108, 184, 255, 0.5);
+}
+
+/* Texte */
+mat-form-field input {
+  color: #fff;
+}
+
+mat-label {
+  color: #e0e0e0 !important;
+}
+
+
+      </style>
+
+      <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+      <div *ngIf="error" class="error">{{ error?.message || error }}</div>
+
+      <div *ngIf="ratingResult">
+        <h2>Product ID: {{ ratingResult.product_id }}</h2>
+        <h2>Average Rating: {{ ratingResult.avg_rating }}</h2>
+        <h2>Number of Ratings: {{ ratingResult.count }}</h2>
+      </div>
+        
+		</div>
+	</div>
+</body>
+</html>

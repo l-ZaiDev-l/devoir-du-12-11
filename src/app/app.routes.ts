@@ -8,6 +8,7 @@ import { AppPlaceholderComponent } from './app-placeholder.component';
 
 import { LoginPageComponent } from './pages/login-page/login-page';
 import { Home } from './pages/home/home';
+import { Cart } from './pages/cart/cart';
 import { ProductsPageComponent } from './pages/products-page/products-page';
 import { ProductRatingPageComponent } from './pages/product-rating-page/product-rating-page';
 
@@ -28,6 +29,8 @@ export const routes: Routes = [
       { path: 'product-rating', component: ProductRatingPageComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'home', component: Home },
+      { path: 'cart', component: Cart },
+      
     ]
   },
 
