@@ -82,8 +82,8 @@ $('.plus-btn').on('click', function(e) {
       <img src="../../../assets/img/product2.png" />
     </div>
 
-    <div class="description">
-      <span>{{ item.name }}</span>
+    <div class="description"> 
+      <span style="color:aliceblue;">{{ item.name }}</span>
       <span>{{ item.model }}</span>
       <span>{{ item.color }}</span>
     </div>
@@ -110,6 +110,51 @@ $('.plus-btn').on('click', function(e) {
   </div>
 
 </div>
+
+  <div class="cart-footer">
+  <div class="cart-total">
+    <h3>Total: {{ getTotal() | currency }}</h3>
+  </div>
+
+  <button class="checkout-btn" (click)="goToCheckout()">
+    Proceed to Checkout →
+  </button>
+</div>
+
+<style>
+  .cart-footer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.checkout-btn {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.checkout-btn:hover {
+  background: #0f5fcc;
+  transform: scale(1.03);
+}
+
+.cart-total h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+</style>
 
 
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CartService, CartItem } from '../../services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ export class Cart {
 
   items: CartItem[] = [];
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
@@ -44,5 +45,13 @@ export class Cart {
   delete(item: CartItem) {
     this.cartService.removeItem(item.id);
     this.items = this.cartService.getItems();
+  }
+
+  getTotal() {
+  return this.items.reduce((sum, i) => sum + i.price * i.qty, 0);
+  }
+
+  goToCheckout() {
+    this.router.navigate(['/app/checkout-summary']);
   }
 }

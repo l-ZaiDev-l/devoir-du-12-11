@@ -78,4 +78,9 @@ export class CartService {
     this.items = this.items.filter(i => i.id !== id);
     this.saveCart();
   }
+  
+    clearCart() {
+    this.items = [];
+    localStorage.removeItem('cart');
+  }
 }

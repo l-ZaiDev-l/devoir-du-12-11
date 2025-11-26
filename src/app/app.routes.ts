@@ -12,6 +12,9 @@ import { Cart } from './pages/cart/cart';
 import { ProductDetails } from './pages/product-details/product-details';
 import { ProductsPageComponent } from './pages/products-page/products-page';
 import { ProductRatingPageComponent } from './pages/product-rating-page/product-rating-page';
+import { CheckoutSummary } from './pages/checkout/checkout-summary/checkout-summary';
+import { CheckoutAddress } from './pages/checkout/checkout-address/checkout-address';
+import { CheckoutConfirmation } from './pages/checkout/checkout-confirmation/checkout-confirmation';
 
 export const routes: Routes = [
 
@@ -32,6 +35,9 @@ export const routes: Routes = [
       { path: 'home', component: Home },
       { path: 'cart', component: Cart },
       { path: 'productDetails/:id', component: ProductDetails },
+      { path: 'checkout-summary', component: CheckoutSummary },
+      { path: 'checkout-address', component: CheckoutAddress },
+      { path: 'checkout-confirmation', component: CheckoutConfirmation },
       
     ]
   },

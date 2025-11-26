@@ -1,0 +1,143 @@
+<!-- <div class="checkout-steps">
+  <div class="step active">1. Summary</div>
+  <div class="step">2. Address</div>
+  <div class="step">3. Confirmation</div>
+</div>
+
+<style>
+    .checkout-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.step {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: #ddd;
+  font-weight: bold;
+}
+
+.step.active {
+  background: #4CAF50;
+  color: white;
+}
+
+</style>
+
+<h2>Shipping Address</h2>
+
+<form (ngSubmit)="saveAddress()">
+  <input type="text" placeholder="Full name" [(ngModel)]="address.fullname" name="fullname" required>
+  <input type="text" placeholder="City" [(ngModel)]="address.city" name="city" required>
+  <input type="text" placeholder="Address" [(ngModel)]="address.line" name="line" required>
+
+  <button type="submit">Continue →</button>
+</form>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+  <!-- codingflicks.com -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Responsive Cards in HTML CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+</head>
+
+
+
+<body>
+    
+    <nav id="navbar">
+    <div class="nav-center">
+        <ul class="nav-list">
+        <li class="nav-link-active"><a class="nav-link" href="/app/home"><i class="uil uil-home-alt"></i> Home</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/products"><i class="uil uil-chat"></i>Products</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/product-rating"><i class="uil uil-shopping-bag"></i> Products Rating</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/cart"><i class="uil uil-chat"></i>Cart</a></li>
+        <li class="nav-link-ani"><a class="nav-link" href="/app/login"><i class="uil uil-user"></i>Disconnect</a></li>
+        </ul>
+    </div>
+</nav> 
+
+  <div class="wrapper">
+    
+		<div class="box-area">
+
+      <div class="checkout-steps">
+  <div class="step">1. Summary</div>
+  <div class="step active">2. Address</div>
+  <div class="step">3. Confirmation</div>
+</div>
+
+  <h2>Shipping Address</h2>
+
+<form (ngSubmit)="saveAddress()">
+  <input type="text" placeholder="Full name" [(ngModel)]="address.fullname" name="fullname" required>
+  <input type="text" placeholder="City" [(ngModel)]="address.city" name="city" required>
+  <input type="text" placeholder="Address" [(ngModel)]="address.line" name="line" required>
+
+  <button class="step" type="submit">Continue →</button>
+</form>
+
+
+			
+		</div>
+	</div>
+</body>
+</html>
+
+
+<style>
+  h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+
+  color: #ffffff;
+  letter-spacing: 1px;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  padding: 10px 20px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+  .box-area {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15); 
+  border-radius: 20px;
+  padding: 20px;
+}
+  .checkout-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.step {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: #ddd;
+  font-weight: 20px;
+  margin: 30px;
+
+}
+
+.step.active {
+  background: #4CAF50;
+  color: white;
+}
+
+</style>
