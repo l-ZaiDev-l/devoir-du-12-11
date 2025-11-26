@@ -1,17 +1,5 @@
-<!-- <mat-card>
-  <h2>Products</h2>
 
-  <mat-progress-bar *ngIf="loading$ | async" mode="indeterminate"></mat-progress-bar>
-
-  <div *ngIf="error$ | async as error" class="error">
-    {{ error?.message || error }}
-  </div>
-
-  <app-product-list [products]="(products$ | async) || []"></app-product-list>
-</mat-card>
- -->
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <!-- codingflicks.com -->
 <head>
@@ -41,24 +29,40 @@
 </nav> 
 
   <div class="wrapper">
-      <div class="box-area">
-          
-          <!-- Boucle sur les produits -->
-          <a *ngFor="let product of (products$ | async) || []"
-            [routerLink]="['/app/productDetails', product.id]">
-              
-              <div class="box">
-                <h2 style="font-size: 30px;">{{ product.name }}</h2>
-                  <div class="img-box">
-                      <img [src]=" '../../../assets/img/products.png'" alt="">
-                  </div>
-                  
-              </div>
+    
+		<div class="box-area">
 
-          </a>
-
-      </div>
+            <main class="container">
+ 
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+    <img class="active" src="../../../assets/img/product2.png" alt="">
   </div>
+ 
+ 
+  <!-- Right Column -->
+  <div class="right-column">
+ 
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>Product Description</span>
+      <h1>{{ product?.name }}</h1>
+      <p>This product is carefully designed to provide excellent quality and reliability. Suitable for everyday use, it combines functionality and style to meet your needs. Whether for personal or professional use, it delivers a satisfying experience</p>
+    </div>
+ 
+ 
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>{{ product?.price | currency }}</span>
+      <button class="cart-btn" (click)="addToCart()">
+    Add to cart
+</button>
+    </div>
+  </div>
+</main>
 
-  </body>
+			
+		</div>
+	</div>
+</body>
 </html>

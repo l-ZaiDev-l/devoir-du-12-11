@@ -1,11 +1,48 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CartService, CartItem } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './cart.html',
-  styleUrl: './cart.css',
+  styleUrls: ['./cart.css'],
 })
 export class Cart {
 
+  items: CartItem[] = [];
+
+  constructor(private cartService: CartService) {}
+
+  ngOnInit(): void {
+    this.items = this.cartService.getItems();
+
+    // Synchronisation entre onglets
+    window.addEventListener('storage', () => {
+      this.items = this.cartService.getItems();
+    });
+  }
+
+  increase(item: CartItem) {
+    this.cartService.increaseQty(item.id);
+    this.items = this.cartService.getItems();
+  }
+
+  decrease(item: CartItem) {
+    this.cartService.decreaseQty(item.id);
+    this.items = this.cartService.getItems();
+  }
+
+  updateQty(item: CartItem, event: any) {
+    const value = Number(event.target.value);
+    this.cartService.setQty(item.id, value);
+    this.items = this.cartService.getItems();
+  }
+
+  delete(item: CartItem) {
+    this.cartService.removeItem(item.id);
+    this.items = this.cartService.getItems();
+  }
 }

@@ -9,6 +9,7 @@ import { AppPlaceholderComponent } from './app-placeholder.component';
 import { LoginPageComponent } from './pages/login-page/login-page';
 import { Home } from './pages/home/home';
 import { Cart } from './pages/cart/cart';
+import { ProductDetails } from './pages/product-details/product-details';
 import { ProductsPageComponent } from './pages/products-page/products-page';
 import { ProductRatingPageComponent } from './pages/product-rating-page/product-rating-page';
 
@@ -30,6 +31,7 @@ export const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'home', component: Home },
       { path: 'cart', component: Cart },
+      { path: 'productDetails/:id', component: ProductDetails },
       
     ]
   },

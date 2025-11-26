@@ -32,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatProgressBarModule,
     ReactiveFormsModule,
+    
   ],
 })
 export class LoginPageComponent {
